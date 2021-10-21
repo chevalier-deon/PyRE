@@ -1,4 +1,4 @@
-PyRE is free software under the MIT license. Attribution is appreciated but not required.
+PyRE is free software under the MIT license.
 
 *begin license text*
 
