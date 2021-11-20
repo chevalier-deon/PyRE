@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name = "pyre",
-    version = "0.0.1",
+    version = "0.0.2",
     description = "A low-dependency library for epidemiologic analysis.",
     url = "https://github.com/chevalier-deon/PyRE.git",
     author = "chevalier-deon/guro_io",
