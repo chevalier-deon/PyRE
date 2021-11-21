@@ -12,6 +12,12 @@ def rate(numerator, denominator, per, tenpower=False):
     else:
         return (numerator / denominator) * per
 
+def r_diff(exposed, unexposed): # difference between two rates
+    return exposed - unexposed
+
+def r_ratio(exposed, unexposed): # ratio of two rates
+    return exposed / unexposed
+
 # estimates sum(person-time) for a population size and followup duration
 def ptime(pop_size, duration):
     avg_pop = mean(pop_size)
@@ -21,10 +27,10 @@ def ptime(pop_size, duration):
 
 #specialized rate/proportion functions
 
-def incidence_p(onsets, at_risk, power=0, s_onset=False, s_atrisk=False): # can only be used for closed populations
-    if s_onset:
+def incidence_p(onsets, at_risk, power=0): # can only be used for closed populations
+    if isinstance(onsets, list):
         onsets = sum(onsets)
-    if s_atrisk:
+    if isinstance(onsets,):
         at_risk = sum(at_risk)
     return rate(onsets, at_risk, power, tenpower=True)
 
@@ -37,10 +43,9 @@ def incidence_r(onsets, time, power, s_onset=False, p_time=False, cohort=False):
         onsets = sum(onsets)
     return rate(onsets, time, power, tenpower=True)
 
-def prevalence(cases, individuals, power, s_cases=False, s_individuals=False):
-    if s_cases:
+def prevalence(cases, individuals, power):
+    if isinstance(cases, list):
         cases = sum(cases)
-    if s_individuals:
+    if isinstance(individuals, list):
         individuals = len(individuals)
     return rate(cases, individuals, power, tenpower=True)
-
